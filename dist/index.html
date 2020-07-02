@@ -1,46 +1,55 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Todo List</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="styles.css"/>
-  <link rel="stylesheet" type="text/css" href="/Users/Filipe/todo/todo-list/node_modules/flatpickr/dist/flatpickr.css"/>
-  <link rel="stylesheet" type="text/css" href="/Users/Filipe/todo/todo-list/node_modules/@fortawesome/fontawesome-free/css/all.css"/>
-</head>
-<body>
-  <div id="container">
-    <form id="project-form" action="" name="proj-form">
-      <h2>Create a new project</h2>
-      <label for="project">Project Name</label>
-      <input type="text" name="project">
-      <button type="button" id="new-proj">New Project</button>
-    </form>
-    <form id="form" action="" name="todo-form">
-      <h2>Create a new to-do</h2>
-      <label for="title">To-do</label>
-      <input type="text" name="title">
-      <label for="description">Description</label>
-      <input type="text" name="description">
-      <label for="duedate">Due Date</label>
-      <input class="flatpickr flatpickr-input" type="date" name="duedate" id="due-date">
-      <div>
-      <label for="priority">Priority</label>
-      <select id="priority">
-        <option value="high">High</option>
-        <option value="regular">Regular</option>
-        <option value="low">Low</option>
-      </select>
-      <label for="project">Project</label>
-      <select id="project">
-        
-      </select>
-      <button id="add-btn" type="button">Create</button>
+  <head>
+    <title>Todo List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="node_modules/flatpickr/dist/flatpickr.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="node_modules/@fortawesome/fontawesome-free/css/all.css"
+    />
+  </head>
+  <body>
+    <div id="container">
+      <form id="project-form" action="" name="proj-form">
+        <h2>Create a new project</h2>
+        <label for="project">Project Name</label>
+        <input type="text" name="project" />
+        <button type="button" id="new-proj">New Project</button>
+      </form>
+      <form id="form" action="" name="todo-form">
+        <h2>Create a new to-do</h2>
+        <label for="title">To-do</label>
+        <input type="text" name="title" />
+        <label for="description">Description</label>
+        <input type="text" name="description" />
+        <label for="duedate">Due Date</label>
+        <input
+          class="flatpickr flatpickr-input"
+          type="date"
+          name="duedate"
+          id="due-date"
+        />
+        <div>
+          <label for="priority">Priority</label>
+          <select id="priority">
+            <option value="high">High</option>
+            <option value="regular">Regular</option>
+            <option value="low">Low</option>
+          </select>
+          <label for="project">Project</label>
+          <select id="project"> </select>
+          <button id="add-btn" type="button">Create</button>
+        </div>
+      </form>
     </div>
-    </form>
-  </div>
-  <div id="list">
-
-  </div>
-  <script src="main.js"></script>
-</body>
+    <div id="list"></div>
+    <script src="main.js"></script>
+  </body>
 </html>
