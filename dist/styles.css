@@ -22,7 +22,7 @@ button {
   padding: 1rem;
   background-color: white;
   border-radius: 4px;
-  box-shadow: 0 2px 10px 0 rgba(0,0,0,.1)
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
 }
 #project-form label {
   font-weight: 800;
@@ -50,7 +50,7 @@ button {
   padding: 1rem;
   background-color: white;
   border-radius: 4px;
-  box-shadow: 0 2px 10px 0 rgba(0,0,0,.1)
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
 }
 #form div {
   margin: 1rem 0;
@@ -72,12 +72,19 @@ button {
   color: rgb(48, 46, 46);
   margin-bottom: 1rem;
 }
-.project-div {
+.project-header {
+  display: flex;
+  align-items: center;
   margin-bottom: 1rem;
 }
+.project-header h2 {
+  margin-right: 1rem;
+}
 .project-div h2 {
+  color: rgb(42, 204, 136);
+}
+.project-ul {
   margin-bottom: 1rem;
-  color: rgb(50, 103, 194);
 }
 #container {
   max-width: 900px;
@@ -89,7 +96,7 @@ button {
   padding: 1rem;
   background-color: white;
   border-radius: 4px;
-  box-shadow: 0 2px 10px 0 rgba(0,0,0,.1)
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
 }
 .project-ul li {
   display: flex;
@@ -101,7 +108,7 @@ button {
   border-radius: 4px;
 }
 .project-ul li:hover {
-  border: solid 0.5px rgb(121, 171, 228, 0.8);
+  border: solid 0.5px rgb(42, 204, 136);
   transform: scale(1.01);
   transition: transform 0.2s;
 }
@@ -122,16 +129,18 @@ button {
   height: 20px;
   background: white;
   border-radius: 50%;
-  border: solid 0.5px rgb(108, 195, 235);
+  border: solid 0.5px rgb(42, 204, 136);
 }
-.checkbox input[type="checkbox"]:checked + span {
-  background: rgb(90, 202, 253);
+.checkbox input[type='checkbox']:checked + span {
+  background: rgb(42, 204, 136);
 }
-.checkbox input[type="checkbox"]:checked + span:after {
-  font-family: "Font Awesome 5 Free"; font-weight: 800; content: "\f00c";
+.checkbox input[type='checkbox']:checked + span:after {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 800;
+  content: '\f00c';
   color: white;
 }
-input[type="checkbox"] {
+input[type='checkbox'] {
   display: none;
 }
 .todo-title {
@@ -149,7 +158,9 @@ input[type="checkbox"] {
   font-size: 14px;
 }
 .todo-date:before {
-  font-family: "Font Awesome 5 Free"; font-weight: 400; content: "\f073";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 400;
+  content: '\f073';
   margin-right: 0.5rem;
 }
 .priority {
@@ -165,7 +176,7 @@ input[type="checkbox"] {
   font-size: 14px;
   height: 1.3rem;
 }
-.low { 
+.low {
   color: rgb(78, 161, 78);
 }
 .regular {
@@ -175,6 +186,7 @@ input[type="checkbox"] {
   color: rgb(231, 98, 98);
 }
 .clickable {
+  display: inline-block;
   cursor: pointer;
   color: rgb(48, 46, 46);
 }

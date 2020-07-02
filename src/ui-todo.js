@@ -1,30 +1,35 @@
-import { deleteTodo, setTodosIndex, toggleTodo, editTodo, saveEdit, editPriority, editDate } from "./todo"
-import { projList, storeLs } from "./index"
+import {
+  deleteTodo,
+  toggleTodo,
+  editTodo,
+  saveEdit,
+  editPriority,
+  editDate,
+} from './todo';
 
 const displayDescription = (event) => {
   const content = event.target.nextSibling;
-  if(content.style.maxHeight) {
+  if (content.style.maxHeight) {
     content.style.maxHeight = null;
-    event.target.className = 'fas fa-chevron-down'
+    event.target.className = 'fas fa-chevron-down';
   } else {
     content.style.maxHeight = content.scrollHeight + 'px';
-    event.target.className = 'fas fa-chevron-up'
+    event.target.className = 'fas fa-chevron-up';
   }
-}
+};
 
 const displayTodos = (project) => {
   for (let i = 0; i < project.length; i++) {
-    const ul = document.getElementById(`${project[i].name} ul`)
-    ul.querySelectorAll('li').forEach(l => l.remove())
-    project[i].todos.forEach(todo => {
-
+    const ul = document.getElementById(`${project[i].name} ul`);
+    ul.querySelectorAll('li').forEach((l) => l.remove());
+    project[i].todos.forEach((todo) => {
       const createLi = document.createElement('li');
-      const createLabel = document.createElement('label')
-      const createInput = document.createElement('input')
-      const createCheckSpan = document.createElement('span')
+      const createLabel = document.createElement('label');
+      const createInput = document.createElement('input');
+      const createCheckSpan = document.createElement('span');
       const createSpan = document.createElement('span');
       const createSpan2 = document.createElement('span');
-      const createSpan3 = document.createElement('span')
+      const createSpan3 = document.createElement('span');
       const createBtn = document.createElement('i');
       const createBtn2 = document.createElement('i');
       const createDiv = document.createElement('div');
@@ -32,11 +37,11 @@ const displayTodos = (project) => {
 
       ul.appendChild(createLi);
       createLi.appendChild(createLabel);
-      createLabel.className = 'checkbox'
+      createLabel.className = 'checkbox';
       createLabel.appendChild(createInput);
       createInput.type = 'checkbox';
       createLabel.appendChild(createCheckSpan);
-      if(todo.checked === false) {
+      if (todo.checked === false) {
         createInput.checked = false;
         createSpan.style.textDecoration = 'none';
       } else {
@@ -44,7 +49,7 @@ const displayTodos = (project) => {
         createSpan.style.textDecoration = 'line-through';
       }
 
-      createInput.addEventListener('change', toggleTodo)
+      createInput.addEventListener('change', toggleTodo);
       createLi.appendChild(createSpan);
       createLi.appendChild(createSpan2);
       createLi.appendChild(createSpan3);
@@ -60,26 +65,24 @@ const displayTodos = (project) => {
       createSpan.addEventListener('focusout', saveEdit);
       createSpan2.textContent = `${todo.dueDate}`;
       createSpan2.className = 'todo-date';
-      createSpan2.addEventListener('dblclick', editDate)
+      createSpan2.addEventListener('dblclick', editDate);
       createSpan3.textContent = `${todo.priority}`;
-      if(todo.priority === 'high') {
+      if (todo.priority === 'high') {
         createSpan3.className = 'priority high';
       } else if (todo.priority === 'regular') {
         createSpan3.className = 'priority regular';
       } else {
         createSpan3.className = 'priority low';
       }
-      createSpan3.addEventListener('dblclick', editPriority)
+      createSpan3.addEventListener('dblclick', editPriority);
       createBtn.className = 'clickable far fa-trash-alt';
       createBtn.addEventListener('click', deleteTodo);
       createBtn2.className = 'clickable fas fa-chevron-down';
-      createBtn2.addEventListener('click', displayDescription)
+      createBtn2.addEventListener('click', displayDescription);
       createDiv.className = 'description-container hidden';
       createP.textContent = `${todo.desc}`;
-      
-    })
+    });
   }
-}
+};
 
-
-export default displayTodos
+export default displayTodos;
